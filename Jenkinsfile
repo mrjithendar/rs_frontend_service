@@ -12,7 +12,7 @@ pipeline {
         AWS_ACCOUNT_ID = "826334059644"
         vault = credentials('vaultToken')
         tfvars = "vars/${params.Options}.tfvars"
-        eks_cluster_name = "dkode-eks-cluster-demo"
+        eks_cluster_name = "roboshop-eks-cluster-demo"
         service = "frontend_demo"
     }
 
@@ -30,6 +30,12 @@ pipeline {
                 sh "docker build -t ${service} ."
                 sh "docker tag ${service}:latest ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${service}:latest"
                 sh "docker push ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${service}:latest"
+            }
+        }
+
+        stage ('EKS Acthenticate') {
+            steps {
+                sh "aws eks update-kubeconfig --region ${AWS_DEFAULT_REGION} -name ${eks_cluster_name}"
             }
         }
     }
