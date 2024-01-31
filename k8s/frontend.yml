@@ -39,7 +39,7 @@ spec:
               topologyKey: "kubernetes.io/hostname"
       containers:
         - name: frontend
-          image: 826334059644.dkr.ecr.us-east-1.amazonaws.com/roboshop-frontend-demo:latest
+          image: 826334059644.dkr.ecr.us-east-1.amazonaws.com/frontend_demo:latest
           ports:
             - containerPort: 80
           resources:
