@@ -35,7 +35,7 @@ pipeline {
 
         stage ('EKS Acthenticate') {
             steps {
-                sh "aws eks update-kubeconfig --region ${AWS_DEFAULT_REGION} -name ${eks_cluster_name}"
+                sh "aws eks update-kubeconfig --region ${AWS_DEFAULT_REGION} --name ${eks_cluster_name}"
             }
         }
     }
