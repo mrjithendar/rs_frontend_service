@@ -8,6 +8,6 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: frontend
-  minReplicas: 2
+  minreplicas: 1
   maxReplicas: 10
   targetCPUUtilizationPercentage: 50
