@@ -38,5 +38,12 @@ pipeline {
                 sh "aws eks update-kubeconfig --region ${AWS_DEFAULT_REGION} --name ${eks_cluster_name}"
             }
         }
+
+        stage ('Deploy App') {
+            steps {
+                sh "kubectl apply -f deployment.yml"
+                sh "kubectl apply -f service.yml"
+            }
+        }
     }
 }
