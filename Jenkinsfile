@@ -41,7 +41,7 @@ pipeline {
 
         stage ('Deploy App') {
             steps {
-                sh "curl -o -L https://raw.githubusercontent.com/mrjithendar/tools/master/namespace.sh"
+                sh "curl -LO https://raw.githubusercontent.com/mrjithendar/tools/master/namespace.sh"
                 sh "sh namespace.sh"
                 sh "kubectl apply -f k8s/deployment.yml"
                 sh "kubectl apply -f k8s/service.yml"
