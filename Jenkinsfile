@@ -41,8 +41,8 @@ pipeline {
 
         stage ('Deploy App') {
             steps {
-                sh "kubectl apply -f deployment.yml"
-                sh "kubectl apply -f service.yml"
+                sh "kubectl apply -f k8s/deployment.yml"
+                sh "kubectl apply -f k8s/service.yml"
             }
         }
     }
