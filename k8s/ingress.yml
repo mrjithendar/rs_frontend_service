@@ -4,7 +4,6 @@ metadata:
   namespace: roboshop
   name: roboshop-ingress
   annotations:
-    kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
     service.beta.kubernetes.io/aws-load-balancer-type: "external"
     alb.ingress.kubernetes.io/group.name: roboshop
@@ -13,8 +12,8 @@ metadata:
     alb.ingress.kubernetes.io/subnets: subnet-0a3b08cc6114bb19b, subnet-0aa1adf1ff7d86873, subnet-091ce9849dfd42b0e, subnet-0064b1fdd14d17876, subnet-0082cf29a77c815e5
     # alb.ingress.kubernetes.io/security-groups:
     # alb.ingress.kubernetes.io/certificate-arn: 
-    alb.ingress.kubernetes.io/healthcheck-port: traffic-port
-    alb.ingress.kubernetes.io/success-codes: 200,404,301
+    # alb.ingress.kubernetes.io/healthcheck-port: traffic-port
+    # alb.ingress.kubernetes.io/success-codes: 200,404,301
 spec:
   ingressClassName: alb
   rules:
