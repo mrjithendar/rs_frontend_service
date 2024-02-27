@@ -9,7 +9,7 @@ metadata:
     alb.ingress.kubernetes.io/group.name: roboshop
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/load-balancer-attributes: access_logs.s3.enabled=true,access_logs.s3.bucket=roboshop-awslogs-demo,access_logs.s3.prefix=eks
-    alb.ingress.kubernetes.io/subnets: subnet-0a3b08cc6114bb19b, subnet-0aa1adf1ff7d86873, subnet-091ce9849dfd42b0e, subnet-0064b1fdd14d17876, subnet-0082cf29a77c815e5
+    # alb.ingress.kubernetes.io/subnets:
     # alb.ingress.kubernetes.io/security-groups:
     # alb.ingress.kubernetes.io/certificate-arn: 
     # alb.ingress.kubernetes.io/healthcheck-port: traffic-port
